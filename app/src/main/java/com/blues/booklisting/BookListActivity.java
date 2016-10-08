@@ -1,5 +1,6 @@
 package com.blues.booklisting;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -69,6 +70,8 @@ public class BookListActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(List<Book> books) {
             if (books == null) {
+                Intent nextActivity = new Intent(BookListActivity.this, EmptyDataActivity.class);
+                startActivity(nextActivity);
                 return;
             }
 
@@ -139,12 +142,17 @@ public class BookListActivity extends AppCompatActivity {
                 return null;
             }
 
+
             List<Book> books = new ArrayList<>();
 
             try {
                 JSONObject baseJsonResponse = new JSONObject(bookJSON);
-                JSONArray bookArray = baseJsonResponse.getJSONArray("items");
 
+                if (!baseJsonResponse.has("items")){
+                    return null;
+                }
+
+                JSONArray bookArray = baseJsonResponse.getJSONArray("items");
                 for (int i = 0; i < bookArray.length(); i++) {
                     JSONObject currentBook = bookArray.getJSONObject(i);
                     JSONObject volumeInfo = currentBook.getJSONObject("volumeInfo");

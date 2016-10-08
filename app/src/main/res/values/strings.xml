@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">BookListing</string>
+    
+    <string name="no_data">No Data</string>
+    <string name="no_data_hint">No data for this book name, so search other book or check the network</string>
+    <string name="search_again_btn">search again</string>
+    
+    <string name="title">Search Book</string>
+    <string name="input_hint">Enter Book Name</string>
+    <string name="search_btn">search</string>
+    <string name="search_hint">hint: Enter text in the input box and then search it</string>
 </resources>

@@ -8,4 +8,39 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="center_layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_margin">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="big_black_title" parent="center_layout">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="search_view" parent="center_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <style name="search_btn" parent="center_layout">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@android:color/holo_orange_dark</item>
+    </style>
+
+    <style name="black_text">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="title_text" parent="black_text">
+        <item name="android:textSize">30sp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
 </resources>
